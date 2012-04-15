@@ -1,5 +1,5 @@
-reading
-readBody: length
+private
+readBodyBytes: length
 	^ length 
 		ifNil: [
 			stream upTo: 0 ]

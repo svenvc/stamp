@@ -1,15 +1,18 @@
 testing
-testWriteConnectFrame
+testWriteSendFrame
 	| frame byteStream reference |
-	frame := StampConnectFrame new.
-	frame host: 'stomp.github.com'.
+	frame := StampSendFrame new.
+	frame destination: '/queue/a'.
+	frame text: 'Hello World!'.
 	byteStream := ByteArray new writeStream.
 	frame writeOn: (StampMedium on: byteStream).
 	reference := String streamContents: [ :stream |
 		stream 
-			<< 'CONNECT'; lf;
-			<< 'accept-version:1.1'; lf;
-			<< 'host:stomp.github.com'; lf;
+			<< 'SEND'; lf;
+			<< 'destination:/queue/a'; lf;
+			<< 'content-type:text/plain'; lf;
+			<< 'content-length:12'; lf;
 			lf; 
+			<< 'Hello World!';
 			nextPut: 0 asCharacter ].
 	self assert: byteStream contents = reference asByteArray

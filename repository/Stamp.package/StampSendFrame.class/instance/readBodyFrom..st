@@ -1,3 +1,5 @@
-as yet unclassified
+reading
 readBodyFrom: stampMedium
-	body := stampMedium readBody: self contentLength
+	body := stampMedium 
+		readBody: self contentLength 
+		type: self contentType
