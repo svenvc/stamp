@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "SvenVanCaekenberghe 4/15/2012 14:54",
+	"super" : "StampFrame",
+	"category" : "Stamp-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [
+		"SingleInstance"
+	],
+	"instvars" : [ ],
+	"name" : "StampEmptyFrame",
+	"type" : "normal"
+}

@@ -1,0 +1,3 @@
+testing
+hasBody
+	^ body notNil

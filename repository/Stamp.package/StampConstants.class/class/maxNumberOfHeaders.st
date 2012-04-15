@@ -1,0 +1,3 @@
+accessing
+maxNumberOfHeaders
+	^ 32
