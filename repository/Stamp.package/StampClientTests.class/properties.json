@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "SvenVanCaekenberghe 4/16/2012 20:48",
+	"super" : "TestCase",
+	"category" : "Stamp-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "StampClientTests",
+	"type" : "normal"
+}

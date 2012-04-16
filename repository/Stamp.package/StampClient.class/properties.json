@@ -1,0 +1,17 @@
+{
+	"commentStamp" : "SvenVanCaekenberghe 4/16/2012 20:51",
+	"super" : "Object",
+	"category" : "Stamp-Client",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"host",
+		"port",
+		"medium",
+		"connectFrame",
+		"connectedFrame"
+	],
+	"name" : "StampClient",
+	"type" : "normal"
+}
