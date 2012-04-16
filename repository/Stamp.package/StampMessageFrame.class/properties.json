@@ -1,13 +1,15 @@
 {
-	"commentStamp" : "SvenVanCaekenberghe 4/14/2012 16:40",
-	"super" : "StampServerFrame",
-	"category" : "Stamp-Core",
-	"classinstvars" : [ ],
-	"pools" : [ ],
+	"classtraitcomposition" : "TStampFrameWithBody classTrait",
 	"classvars" : [ ],
 	"instvars" : [
 		"body"
 	],
 	"name" : "StampMessageFrame",
-	"type" : "normal"
+	"commentStamp" : "SvenVanCaekenberghe 4/14/2012 16:40",
+	"super" : "StampServerFrame",
+	"traitcomposition" : "TStampFrameWithBody",
+	"type" : "normal",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"category" : "Stamp-Core"
 }

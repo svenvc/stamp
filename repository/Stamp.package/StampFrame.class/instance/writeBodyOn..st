@@ -2,5 +2,6 @@ writing
 writeBodyOn: stampMedium
 	self hasBody
 		ifTrue: [ 
-			"For now assume UTF8 textual content"
-			stampMedium nextPutString: self body ]
+			self body isString
+				ifTrue: [ stampMedium nextPutString: self body ]
+				ifFalse: [ stampMedium nextPutBytes: self body ] ]

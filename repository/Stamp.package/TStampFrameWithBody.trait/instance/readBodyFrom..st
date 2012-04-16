@@ -1,5 +1,5 @@
 reading
 readBodyFrom: stampMedium
-	body := stampMedium 
+	self body: (stampMedium 
 		readBody: self contentLength 
-		type: self contentType
+		type: self contentType)
