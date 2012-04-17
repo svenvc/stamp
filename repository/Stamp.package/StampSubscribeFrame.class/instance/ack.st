@@ -1,3 +1,3 @@
 accessing
 ack
-	^ self headerAt: #ack
+	^ self headerAt: #ack ifAbsent: [ #auto ]

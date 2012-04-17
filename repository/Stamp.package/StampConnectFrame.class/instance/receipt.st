@@ -1,0 +1,3 @@
+accessing
+receipt
+	^ self shouldNotImplement 

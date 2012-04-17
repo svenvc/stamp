@@ -2,8 +2,14 @@ private
 readBodyBytes: length
 	^ length 
 		ifNil: [
-			stream upTo: 0 ]
+			ByteArray streamContents: [ :out | | byte |
+				[ stream atEnd or: [ (byte := stream next) = 0 ] ] whileFalse: [ 
+					out nextPut: byte.
+					stream position > StampConstants maxBodySize 
+						ifTrue: [ self error: 'Body too large' ] ] ] ]
 		ifNotNil: [ | buffer read |
+			StampConstants maxBodySize <= length
+				ifFalse: [ self error: 'Body too large' ].
 			buffer := ByteArray new: length.
 			read := stream readInto: buffer startingAt: 1 count: length.
 			read = length ifFalse: [ self error: 'Incomplete body' ].
