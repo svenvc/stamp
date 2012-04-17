@@ -1,9 +1,10 @@
 private
 readBodyString: length
-	| offset |
-	offset := stream position.
+	| byteCount |
+	byteCount := length.
 	^ String new: length streamContents: [ :out |
-		[ stream atEnd or: [ stream position - offset >= length ] ] whileFalse: [
-			out nextPut: (encoder nextFromStream: stream) ].
+		[ stream atEnd or: [ byteCount <= 0 ] ] whileFalse: [ | char |
+			out nextPut: (char := encoder nextFromStream: stream).
+			byteCount := byteCount - (encoder encodedByteCountFor: char) ].
 		self readEndFrame ]
 			

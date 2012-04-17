@@ -10,7 +10,8 @@
 		"port",
 		"medium",
 		"connectFrame",
-		"connectedFrame"
+		"connectedFrame",
+		"idGenerator"
 	],
 	"name" : "StampClient",
 	"type" : "normal"
