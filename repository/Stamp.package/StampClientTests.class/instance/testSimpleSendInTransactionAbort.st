@@ -1,6 +1,6 @@
 testing
 testSimpleSendInTransactionAbort
-	| client frame destination message transactionId subscriptionId |
+	| client frame destination message transactionId |
 	client := StampClient new.
 	client open.
 	self assert: client isConnected.

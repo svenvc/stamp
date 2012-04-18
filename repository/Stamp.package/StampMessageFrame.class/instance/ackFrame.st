@@ -1,6 +1,6 @@
 accessing
-nack
-	^ StampNackFrame new
+ackFrame
+	^ StampAckFrame new
 		messageId: self messageId;
 		subscription: self subscription;
 		yourself

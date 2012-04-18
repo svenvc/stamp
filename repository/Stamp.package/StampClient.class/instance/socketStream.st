@@ -6,6 +6,6 @@ socketStream
 		port: self port.
 	socketStream 
 		binary; 
-		timeout: 5;
+		timeout: 1;
 		autoFlush: false.
 	^ socketStream

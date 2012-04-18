@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "SvenVanCaekenberghe 4/18/2012 21:38",
+	"super" : "Object",
+	"category" : "Stamp-Client",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"beginFrame"
+	],
+	"name" : "StampTransaction",
+	"type" : "normal"
+}
