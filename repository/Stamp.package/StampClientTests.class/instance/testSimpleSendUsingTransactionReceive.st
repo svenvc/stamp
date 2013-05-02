@@ -1,7 +1,7 @@
 testing
 testSimpleSendUsingTransactionReceive
 	| client frame destination message transaction subscription |
-	client := StampClient new.
+	client := self client.
 	client open.
 	self assert: client isConnected.
 	transaction := client newTransaction.

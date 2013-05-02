@@ -1,6 +1,6 @@
 accessing
 ackFrame
 	^ StampAckFrame new
-		messageId: self messageId;
+		id: self messageId;
 		subscription: self subscription;
 		yourself

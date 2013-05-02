@@ -6,6 +6,8 @@ readLine
 			out position >= StampConstants maxHeaderLineLength
 				ifTrue: [ self error: 'Line too long' ]. 
 			char := encoder nextFromStream: stream.
-			char = Character lf
-				ifTrue: [ endOfLine := true ]
-				ifFalse: [ out nextPut: char ] ] ]
+			char = Character cr
+				ifFalse: [ 
+					char = Character lf
+						ifTrue: [ endOfLine := true ]
+						ifFalse: [ out nextPut: char ] ] ] ]

@@ -9,9 +9,12 @@
 		"host",
 		"port",
 		"medium",
+		"login",
+		"passcode",
 		"connectFrame",
 		"connectedFrame",
-		"idGenerator"
+		"idGenerator",
+		"debug"
 	],
 	"name" : "StampClient",
 	"type" : "normal"

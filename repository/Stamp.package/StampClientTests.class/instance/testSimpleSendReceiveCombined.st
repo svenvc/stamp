@@ -1,7 +1,7 @@
 testing
 testSimpleSendReceiveCombined
 	| client frame destination message subscription |
-	client := StampClient new.
+	client := self client.
 	client open.
 	self assert: client isConnected.
 	(frame := client newSendFrameTo: (destination := '/queue/helloworld'))

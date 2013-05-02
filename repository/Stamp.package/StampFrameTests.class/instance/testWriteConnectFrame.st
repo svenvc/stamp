@@ -8,8 +8,8 @@ testWriteConnectFrame
 	reference := String streamContents: [ :stream |
 		stream 
 			<< 'CONNECT'; lf;
-			<< 'accept-version:1.1'; lf;
+			<< 'accept-version:1.2'; lf;
 			<< 'host:stomp.github.com'; lf;
 			lf; 
 			nextPut: 0 asCharacter ].
-	self assert: byteStream contents = reference asByteArray
+	self assert: byteStream contents equals: reference asByteArray

@@ -6,5 +6,6 @@ open
 	frame := self read.
 	"We should do protocol negociation too"
 	frame command = #CONNECTED
-		ifTrue: [ connectedFrame := frame ].
+		ifTrue: [ connectedFrame := frame ]
+		ifFalse: [ StampError signalFor: frame ].
 	^ self isConnected

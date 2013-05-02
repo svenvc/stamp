@@ -1,11 +1,13 @@
 {
 	"commentStamp" : "<historical>",
-	"super" : "TestCase",
-	"category" : "Stamp-Tests",
+	"super" : "Error",
+	"category" : "Stamp-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
-	"name" : "StampClientTests",
+	"instvars" : [
+		"errorFrame"
+	],
+	"name" : "StampError",
 	"type" : "normal"
 }

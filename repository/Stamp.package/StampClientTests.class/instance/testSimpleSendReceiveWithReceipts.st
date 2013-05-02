@@ -1,7 +1,7 @@
 testing
 testSimpleSendReceiveWithReceipts
 	| client frame destination message receiptId subscriptionId |
-	client := StampClient new.
+	client := self client.
 	client open.
 	self assert: client isConnected.
 	(frame := StampSendFrame new)

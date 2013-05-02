@@ -1,7 +1,7 @@
 testing
 testSimpleSendReceiveWithAck
 	| client frame destination message ack subscriptionId |
-	client := StampClient new.
+	client := self client.
 	client open.
 	self assert: client isConnected.
 	(frame := StampSendFrame new)

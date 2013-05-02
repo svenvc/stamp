@@ -4,4 +4,5 @@ read
 	[
 		frame := StampFrame readFrom: self medium.
 		frame command isEmpty ] whileTrue.
+	self log: [ 'Read ', frame printString ].
 	^ frame

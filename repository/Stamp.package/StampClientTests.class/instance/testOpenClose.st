@@ -1,7 +1,7 @@
 testing
 testOpenClose
 	| client |
-	client := StampClient new.
+	client := self client.
 	self deny: client isConnected.
 	self assert: client session isNil.
 	client open.
