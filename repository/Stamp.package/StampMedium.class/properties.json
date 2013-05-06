@@ -8,7 +8,8 @@
 	"instvars" : [
 		"stream",
 		"encoder",
-		"charsToEscape"
+		"charsToEscape",
+		"stringStream"
 	],
 	"name" : "StampMedium",
 	"type" : "normal"

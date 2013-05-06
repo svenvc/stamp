@@ -10,7 +10,7 @@ readBodyString: length
 					byteCount := byteCount + (encoder encodedByteCountFor: char).
 					byteCount > StampConstants maxBodySize
 						ifTrue: [ self error: 'Body too large' ] ] ].
-			self endFrame ]
+			self readEndFrame ]
 		ifNotNil: [
 			byteCount := length.
 			String new: length streamContents: [ :out |

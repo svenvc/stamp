@@ -1,6 +1,6 @@
 reading
 readLine
-	^ String streamContents: [ :out | | endOfLine |
+	^ self stringStreamContents: [ :out | | endOfLine |
 		endOfLine := false.
 		[ stream atEnd or: [ endOfLine ] ] whileFalse: [ | char |
 			out position >= StampConstants maxHeaderLineLength
