@@ -1,4 +1,3 @@
 writing
 nextPutString: string
-	string do: [ :each |
-		encoder nextPut: each toStream: stream ]
+	encoder next: string size putAll: string startingAt: 1 toStream: stream
