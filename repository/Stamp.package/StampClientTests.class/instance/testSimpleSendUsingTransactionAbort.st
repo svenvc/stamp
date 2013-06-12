@@ -5,10 +5,10 @@ testSimpleSendUsingTransactionAbort
 	client open.
 	self assert: client isConnected.
 	transaction := client newTransaction.
-	client writeWithReceipt: transaction beginFrame.
+	client writeWithReceipt: transaction beginFrame ifFail: [ self fail ].
 	(frame := client newSendFrameTo: '/queue/helloworld')
 		text: 'Hello World from Stamp, the Pharo STOMP client'.
 	client write: (transaction wrap: frame).	"Apparently no receipts are delivered until commit"
-	client writeWithReceipt: transaction abortFrame.
+	client writeWithReceipt: transaction abortFrame ifFail: [ self fail ].
 	client close.
 	"There should be nothing in the queue now"

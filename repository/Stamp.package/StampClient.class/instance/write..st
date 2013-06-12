@@ -1,4 +1,4 @@
 writing
 write: frame
-	frame writeOn: self medium.
-	self log: [ 'Wrote ', frame printString ]
+	self writeNoFlush: frame.
+	self medium flush

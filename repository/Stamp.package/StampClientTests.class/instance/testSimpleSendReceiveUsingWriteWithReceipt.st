@@ -7,12 +7,12 @@ testSimpleSendReceiveUsingWriteWithReceipt
 	(frame := StampSendFrame new)
 		destination: (destination := '/queue/helloworld'); 
 		text: (message := 'Hello World from Stamp, the Pharo STOMP client').
-	client writeWithReceipt: frame.
+	client writeWithReceipt: frame ifFail: [ self fail ].
 	(frame := StampSubscribeFrame new)
 		destination: destination;
 		id: (subscriptionId := client nextId);
 		ack: #auto.
-	client writeWithReceipt: frame.
+	client writeWithReceipt: frame ifFail: [ self fail ].
 	frame := client read.
 	self assert: frame command = #MESSAGE.
 	self assert: frame body = message.
@@ -21,5 +21,5 @@ testSimpleSendReceiveUsingWriteWithReceipt
 	self deny: frame messageId isNil.
 	(frame := StampUnsubscribeFrame new)
 		id: subscriptionId.
-	client writeWithReceipt: frame.
+	client writeWithReceipt: frame ifFail: [ self fail ].
 	client close

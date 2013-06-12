@@ -5,6 +5,4 @@ writeOn: stampMedium
 		endLine.
 	self writeHeadersOn: stampMedium.
 	self writeBodyOn: stampMedium.
-	stampMedium 
-		endFrame; 
-		flush
+	stampMedium endFrame

@@ -2,4 +2,4 @@ initialize-release
 initialize
 	super initialize.
 	encoder := ZnUTF8Encoder new.
-	charsToEscape := { Character linefeed. $:. $\ }.
+	charsToEscape := ByteString withAll: { Character linefeed. $:. $\ }.

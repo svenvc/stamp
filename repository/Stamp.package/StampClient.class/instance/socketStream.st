@@ -1,7 +1,7 @@
 private
 socketStream
 	| socketStream |
-	socketStream := SocketStream 
+	socketStream := ZdcSocketStream 
 		openConnectionToHostNamed: self host 
 		port: self port.
 	socketStream 

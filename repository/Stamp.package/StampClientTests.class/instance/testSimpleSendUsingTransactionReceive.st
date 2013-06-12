@@ -5,13 +5,13 @@ testSimpleSendUsingTransactionReceive
 	client open.
 	self assert: client isConnected.
 	transaction := client newTransaction.
-	client writeWithReceipt: transaction beginFrame.
+	client writeWithReceipt: transaction beginFrame ifFail: [ self fail ].
 	(frame := client newSendFrameTo: (destination := '/queue/helloworld'))
 		text: (message := 'Hello World from Stamp, the Pharo STOMP client').
 	client write: (transaction wrap: frame).	"Apparently no receipts are delivered until commit"
-	client writeWithReceipt: transaction commitFrame.
+	client writeWithReceipt: transaction commitFrame ifFail: [ self fail ].
 	subscription := client newSubscriptionTo: destination.
-	client writeWithReceipt: subscription subscribeFrame.
+	client writeWithReceipt: subscription subscribeFrame ifFail: [ self fail ].
 	frame := client read.
 	self assert: frame command = #MESSAGE.
 	self assert: frame body = message.
