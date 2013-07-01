@@ -17,7 +17,7 @@ readBodyString: length
 					notification pass ].
 		totalRead := totalRead + read.
 		totalRead > StampConstants maxBodySize
-						ifTrue: [ self error: 'Body too large' ].
+			ifTrue: [ self error: 'Body too large' ].
 		bufferStream ifNil: [ 
 			readStream atEnd
 				ifTrue: [ self readEndFrame. ^ buffer copyFrom: 1 to: read ]

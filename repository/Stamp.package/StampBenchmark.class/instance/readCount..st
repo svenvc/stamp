@@ -1,6 +1,6 @@
-accessing
+running
 readCount: count
-	| client message subscription frame |
+	| client subscription frame |
 	client := self client.
 	^ [ 
 	client open.
@@ -11,6 +11,5 @@ readCount: count
 		1 to: count do: [ :each | 
 			frame := client read.
 			client write: frame ackFrame.
-			message := frame body.
-			out nextPut: (message copyUpTo: Character space) ].
+			out nextPut: frame body ].
 		client write: subscription unsubscribeFrame ] ] ensure: [ client close ]

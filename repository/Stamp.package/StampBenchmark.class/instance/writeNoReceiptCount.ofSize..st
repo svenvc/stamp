@@ -1,13 +1,10 @@
-accessing
+running
 writeNoReceiptCount: count ofSize: size
-	| client message frame filler |
-	filler := self randomString: size.
+	| client frame |
 	client := self client.
 	^ [ 
 	client open.
 	1 to: count do: [ :each | 
-		message := 'message-{1} {2}' format: {each asString. filler}.
-		(frame := client newSendFrameTo: self queue)
-			text: message.
+		frame := self sendFrameOfSize: size tag: each for: client. 
 		client writeNoFlush: frame ].
 	count ] ensure: [ client close ]

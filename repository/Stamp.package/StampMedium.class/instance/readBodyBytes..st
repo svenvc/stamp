@@ -8,7 +8,7 @@ readBodyBytes: length
 					stream position > StampConstants maxBodySize 
 						ifTrue: [ self error: 'Body too large' ] ] ] ]
 		ifNotNil: [ | buffer read |
-			StampConstants maxBodySize <= length
+			length <= StampConstants maxBodySize
 				ifFalse: [ self error: 'Body too large' ].
 			buffer := ByteArray new: length.
 			read := stream readInto: buffer startingAt: 1 count: length.

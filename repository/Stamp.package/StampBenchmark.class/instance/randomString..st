@@ -1,4 +1,4 @@
-accessing
+private
 randomString: size
 	^ String new: size streamContents: [ :out |
 		 size timesRepeat: [ 

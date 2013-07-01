@@ -1,14 +1,11 @@
 {
 	"commentStamp" : "<historical>",
-	"super" : "Object",
+	"super" : "TestCase",
 	"category" : "Stamp-Tests",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [
-		"binary",
-		"message"
-	],
-	"name" : "StampBenchmark",
+	"instvars" : [ ],
+	"name" : "StampBenchmarkTests",
 	"type" : "normal"
 }
