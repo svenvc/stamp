@@ -1,3 +1,3 @@
-accessing
+options
 passcode
-	^ passcode
+	^ self optionAt: #passcode ifAbsent: [ nil ]

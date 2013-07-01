@@ -1,11 +1,9 @@
 initialize-release
 open
-	| frame |
 	self close.
 	self write: self connectFrame.
-	frame := self read.
-	"We should do protocol negociation too"
-	frame command = #CONNECTED
-		ifTrue: [ connectedFrame := frame ]
-		ifFalse: [ StampError signalFor: frame ].
+	connectedFrame  := self readSuchThat: [ :frame | frame command = #CONNECTED ].
+	self setActualHeartbeat.
+	connectFrame acceptVersion = connectedFrame version
+		ifFalse: [ self error: 'Incompatible STOMP version' ].
 	^ self isConnected

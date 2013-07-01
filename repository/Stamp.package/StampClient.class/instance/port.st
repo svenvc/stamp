@@ -1,4 +1,3 @@
-accessing
+options
 port
-	^ port ifNil: [ 
-		port := StampConstants defaultPort ]
+	^ self optionAt: #port ifAbsent: [ StampConstants defaultPort ]

@@ -7,7 +7,7 @@ testSimpleSendInTransactionAbort
 	transactionId := client nextId.
 	client write: (StampBeginFrame transaction: transactionId).
 	(frame := StampSendFrame new)
-		destination: '/queue/helloworld'; 
+		destination: self helloWorldQueue; 
 		text: 'Hello World from Stamp, the Pharo STOMP client';
 		transaction: transactionId.
 	client write: frame.

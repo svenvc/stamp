@@ -5,12 +5,12 @@ testSimpleSendReceiveUsingSubscription
 	client open.
 	self assert: client isConnected.
 	(frame := StampSendFrame new)
-		destination: (destination := '/queue/helloworld'); 
+		destination: (destination := self helloWorldQueue); 
 		text: (message := 'Hello World from Stamp, the Pharo STOMP client').
 	client write: frame.
 	subscription := client newSubscriptionTo: destination.
 	client write: subscription subscribeFrame.
-	frame := client read.
+	frame := client readMessage.
 	self assert: frame command = #MESSAGE.
 	self assert: frame body = message.
 	self assert: frame destination = destination.

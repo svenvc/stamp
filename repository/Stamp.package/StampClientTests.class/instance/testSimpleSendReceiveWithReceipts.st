@@ -5,7 +5,7 @@ testSimpleSendReceiveWithReceipts
 	client open.
 	self assert: client isConnected.
 	(frame := StampSendFrame new)
-		destination: (destination := '/queue/helloworld'); 
+		destination: (destination := self helloWorldQueue); 
 		text: (message := 'Hello World from Stamp, the Pharo STOMP client');
 		receipt: (receiptId := client nextId).
 	client write: frame.

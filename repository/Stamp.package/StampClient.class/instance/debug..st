@@ -1,3 +1,3 @@
-initialize-release
+options
 debug: boolean
-	debug := boolean
+	self optionAt: #debug put: boolean

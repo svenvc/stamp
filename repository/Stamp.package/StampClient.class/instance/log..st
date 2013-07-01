@@ -1,3 +1,3 @@
 private
 log: message
-	debug ifTrue: [ super logCr: message value ]
+	self debug ifTrue: [ super logCr: message value ]

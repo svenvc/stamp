@@ -1,3 +1,3 @@
-initialize-release
+options
 passcode: string
-	passcode := string
+	self optionAt: #passcode put: string

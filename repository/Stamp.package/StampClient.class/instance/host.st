@@ -1,4 +1,3 @@
-accessing
+options
 host
-	^ host ifNil: [ 
-		host := 'localhost' ]
+	^ self optionAt: #host ifAbsent: [ 'localhost' ]

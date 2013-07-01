@@ -1,3 +1,3 @@
-initialize-release
+options
 login: string
-	login := string
+	self optionAt: #login put: string

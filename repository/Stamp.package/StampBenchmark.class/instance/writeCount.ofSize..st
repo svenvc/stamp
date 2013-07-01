@@ -9,5 +9,5 @@ writeCount: count ofSize: size
 		message := 'message-{1} {2}' format: {each asString. filler}.
 		(frame := client newSendFrameTo: self queue)
 			text: message.
-		client writeWithReceipt: frame ifFail: [ self error: 'no receipt' ] ].
+		client writeWithReceipt: frame ].
 	count ] ensure: [ client close ]

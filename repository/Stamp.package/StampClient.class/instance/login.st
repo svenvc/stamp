@@ -1,3 +1,3 @@
-accessing
+options
 login
-	^ login
+	^ self optionAt: #login ifAbsent: [ nil ]

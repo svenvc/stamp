@@ -11,7 +11,7 @@ readBodyString: length
 			do: [ :notification | 
 					buffer := notification wideString.
 					bufferStream ifNotNil: [ | wideString position |
-						position := stream position.
+						position := bufferStream position.
 						wideString := WideString from: bufferStream originalContents.
 						bufferStream on: wideString; setFrom: position + 1 to: position ].
 					notification pass ].

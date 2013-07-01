@@ -1,6 +1,6 @@
 initialize-release
 close
 	medium ifNotNil: [ 
-		[ self disconnect ]
+		[ [ self disconnect ] on: ConnectionClosed, ConnectionTimedOut do: [ ] ]
 			ensure: [ self closeMedium ].
-		connectedFrame := nil ]
+		connectFrame := connectedFrame := nil ]

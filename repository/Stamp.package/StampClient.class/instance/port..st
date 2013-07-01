@@ -1,3 +1,3 @@
-initialize-release
+options
 port: integer
-	port := integer
+	self optionAt: #port put: integer

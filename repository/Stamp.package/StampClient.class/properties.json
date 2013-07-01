@@ -6,15 +6,14 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"host",
-		"port",
+		"options",
 		"medium",
-		"login",
-		"passcode",
 		"connectFrame",
 		"connectedFrame",
 		"idGenerator",
-		"debug"
+		"heartbeat",
+		"lastActivity",
+		"inbox"
 	],
 	"name" : "StampClient",
 	"type" : "normal"

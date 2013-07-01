@@ -1,3 +1,3 @@
-initialize-release
+options
 host: hostName
-	host := hostName
+	self optionAt: #host put: hostName
