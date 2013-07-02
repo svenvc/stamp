@@ -15,7 +15,7 @@ testSimpleSendReceiveWithReceipts
 	(frame := StampSubscribeFrame new)
 		destination: destination;
 		id: (subscriptionId := client nextId);
-		ack: #auto;
+		autoAck;
 		receipt: (receiptId := client nextId).
 	client write: frame.
 	frame := client read.

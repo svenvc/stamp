@@ -15,7 +15,7 @@ testSimpleSendInTransactionReceive
 	(frame := StampSubscribeFrame new)
 		destination: destination;
 		id: (subscriptionId := client nextId);
-		ack: #auto.
+		autoAck.
 	client write: frame.
 	frame := client read.
 	self assert: frame command = #MESSAGE.

@@ -1,18 +1,18 @@
 testing
-testSimpleSendReceiveUsingWriteWithReceipt
+testSimpleSubscribeSendReceive
 	| client frame destination message subscriptionId |
 	client := self client.
 	client open.
 	self assert: client isConnected.
-	(frame := StampSendFrame new)
-		destination: (destination := self helloWorldQueue); 
-		text: (message := 'Hello World from Stamp, the Pharo STOMP client').
-	client writeWithReceipt: frame.
 	(frame := StampSubscribeFrame new)
-		destination: destination;
+		destination: (destination := self helloWorldQueue);
 		id: (subscriptionId := client nextId);
 		autoAck.
-	client writeWithReceipt: frame.
+	client write: frame.
+	(frame := StampSendFrame new)
+		destination: destination; 
+		text: (message := 'Hello World from Stamp, the Pharo STOMP client').
+	client write: frame.
 	frame := client readMessage.
 	self assert: frame command = #MESSAGE.
 	self assert: frame body = message.
@@ -21,5 +21,5 @@ testSimpleSendReceiveUsingWriteWithReceipt
 	self deny: frame messageId isNil.
 	(frame := StampUnsubscribeFrame new)
 		id: subscriptionId.
-	client writeWithReceipt: frame.
+	client write: frame.
 	client close

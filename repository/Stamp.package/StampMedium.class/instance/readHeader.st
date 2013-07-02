@@ -3,10 +3,10 @@ readHeader
 	| line |
 	^ (line := self readLine) isEmpty
 		ifTrue: [ nil ]
-		ifFalse: [ | elements key value |
-			elements := $: split: line.
-			elements size = 2 
-				ifFalse: [ self error: 'Incorrect header, no colon found' ].
-			key := self decodeValue: elements first.
-			value := self decodeValue: elements second.
+		ifFalse: [ | index key value |
+			index := line indexOf: $: .
+			index = 0
+				ifTrue: [ self error: 'Incorrect header, no colon found' ].
+			key := self decodeValue: (line copyFrom: 1 to: index - 1).
+			value := self decodeValue: (line copyFrom: index + 1 to: line size).
 			key -> value ]
