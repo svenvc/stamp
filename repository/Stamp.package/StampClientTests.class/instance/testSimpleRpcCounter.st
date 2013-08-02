@@ -4,12 +4,11 @@ testSimpleRpcCounter
 	"The counter server listens to asynchroneous commands up, down and quit,
 	as well as the synchroneous command value"
 	server := self client.
-	[ | subscription counter |
+	[ | counter |
 		server open.
 		counter := 0.
-		subscription := server newSubscriptionTo: 'counter'.
-		server write: subscription subscribeFrame.
-		[ server runWith: [ :message | | result |
+		server subscribeTo: 'counter'.
+		server runWith: [ :message |
 			message body = #quit
 				ifTrue: [ ConnectionClosed signal ].
 			message body = #up
@@ -17,15 +16,10 @@ testSimpleRpcCounter
 			message body = #down
 				ifTrue: [ counter := counter - 1 ].
 			message body = #value
-				ifTrue: [ 
-					result := server newSendFrameTo: message replyTo.
-					result text: counter asString.
-					server write: result ] ] ]
-				on: ConnectionClosed
-				do: [ server close ] ] fork.
+				ifTrue: [ server sendText: counter asString to: message replyTo ] ] ] fork.
 	client := self client.
 	client open.
-	"Helper block to access the current counter value synchroneously"
+	"Helper to access the current counter value synchroneously"
 	check := [ 
 		request := client newSendFrameTo: 'counter'.
 		request text: 'value'.
@@ -35,12 +29,10 @@ testSimpleRpcCounter
 		response body asNumber ].
 	self assert: check value equals: 0.
 	100 timesRepeat: [ 
-		client write: ((client newSendFrameTo: 'counter') text: 'up'; yourself) ].
+		client sendText: 'up' to: 'counter' ].
 	self assert: check value equals: 100.
 	100 timesRepeat: [ 
-		client write: ((client newSendFrameTo: 'counter') text: 'down'; yourself) ].
+		client sendText: 'down' to: 'counter' ].
 	self assert: check value equals: 0.
-	request := client newSendFrameTo: 'counter'.
-	request text: 'quit'.
-	client write: request.
-	client  close
+	client sendText: 'quit' to: 'counter'.
+	client close
