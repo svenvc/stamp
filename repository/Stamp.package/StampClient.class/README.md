@@ -1,2 +1,2 @@
 I am StampClient.
-I connect to a STOMP 1.1 server as a client to send and/or receive messages.
+I connect to a STOMP 1.2 server as a client to send and/or receive messages.

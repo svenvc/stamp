@@ -1,1 +1,1 @@
-I am StampTransaction, a helper object to manage STOMP 1.1 transactions.
+I am StampTransaction, a helper object to manage STOMP 1.2 transactions.
