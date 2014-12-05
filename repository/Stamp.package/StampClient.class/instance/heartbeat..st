@@ -1,5 +1,5 @@
 options
 heartbeat: milliseconds
-	milliseconds < (self timeout * 1000)
-		ifFalse: [ self error: 'heartbeat cannot be smaller than timeout' ].
+	self timeout * 1000 * 4 < milliseconds
+		ifFalse: [ self error: 'heartbeat must be larger than 4 times the timeout' ].
 	self optionAt: #heartbeat put: milliseconds

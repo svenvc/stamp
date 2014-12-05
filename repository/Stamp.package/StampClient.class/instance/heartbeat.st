@@ -1,3 +1,3 @@
 options
 heartbeat
-	^ self optionAt: #heartbeat ifAbsent: [ 2000 "milliseconds" ]
+	^ self optionAt: #heartbeat ifAbsent: [ 60*1000 "milliseconds" ]

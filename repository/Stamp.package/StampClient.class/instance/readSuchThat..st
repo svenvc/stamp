@@ -6,9 +6,9 @@ readSuchThat: block
 	started := Time millisecondClockValue.
 	[
 		frame := self readNextFrame.
+		StampFrameReadEvent new frame: frame; emit.
 		frame command isEmpty
 			ifFalse: [ 
-				self log: [ 'Read ', frame printString ].
 				(block value: frame)
 					ifTrue: [ ^ frame ]
 					ifFalse: [ inbox add: frame ] ].
