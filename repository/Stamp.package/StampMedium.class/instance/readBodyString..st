@@ -14,7 +14,7 @@ readBodyString: length
 						position := bufferStream position.
 						wideString := WideString from: bufferStream originalContents.
 						bufferStream on: wideString; setFrom: position + 1 to: position ].
-					notification pass ].
+					notification resume ].
 		totalRead := totalRead + read.
 		totalRead > StampConstants maxBodySize
 			ifTrue: [ self error: 'Body too large' ].

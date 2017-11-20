@@ -1,3 +1,3 @@
 accessing
 maxBodySize
-	^ 66560
+	^ 2**20
