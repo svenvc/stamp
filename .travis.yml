@@ -1,0 +1,19 @@
+language: smalltalk
+sudo: required
+
+os:
+  - linux
+
+smalltalk:
+  - Pharo-7.0
+  - Pharo-6.0
+  - Pharo-5.0
+
+services:
+  - rabbitmq
+
+install:
+  - sudo rabbitmq-plugins enable rabbitmq_stomp
+#  - sudo service rabbitmq-server stop
+#- sudo rabbitmq-plugins enable rabbitmq_stomp
+#  - sudo service rabbitmq-server start
