@@ -14,6 +14,3 @@ services:
 
 install:
   - sudo rabbitmq-plugins enable rabbitmq_stomp
-#  - sudo service rabbitmq-server stop
-#- sudo rabbitmq-plugins enable rabbitmq_stomp
-#  - sudo service rabbitmq-server start
