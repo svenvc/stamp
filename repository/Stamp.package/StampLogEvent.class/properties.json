@@ -1,0 +1,17 @@
+{
+	"commentStamp" : "SvenVanCaekenberghe 12/5/2014 11:38",
+	"super" : "Announcement",
+	"category" : "Stamp-Logging",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [
+		"IdCounter",
+		"LogEventAnnouncer"
+	],
+	"instvars" : [
+		"timestamp",
+		"id"
+	],
+	"name" : "StampLogEvent",
+	"type" : "normal"
+}

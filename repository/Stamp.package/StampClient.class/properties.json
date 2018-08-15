@@ -1,0 +1,20 @@
+{
+	"commentStamp" : "<historical>",
+	"super" : "Object",
+	"category" : "Stamp-Client",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"options",
+		"medium",
+		"connectFrame",
+		"connectedFrame",
+		"idGenerator",
+		"heartbeat",
+		"lastActivity",
+		"inbox"
+	],
+	"name" : "StampClient",
+	"type" : "normal"
+}

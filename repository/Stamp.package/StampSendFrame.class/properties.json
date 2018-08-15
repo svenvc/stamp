@@ -1,0 +1,15 @@
+{
+	"classtraitcomposition" : "TStampFrameWithBody classTrait",
+	"classvars" : [ ],
+	"instvars" : [
+		"body"
+	],
+	"name" : "StampSendFrame",
+	"commentStamp" : "SvenVanCaekenberghe 4/14/2012 16:40",
+	"super" : "StampClientFrame",
+	"traitcomposition" : "TStampFrameWithBody",
+	"type" : "normal",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"category" : "Stamp-Core"
+}

@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "SvenVanCaekenberghe 4/15/2012 16:42",
+	"super" : "Object",
+	"category" : "Stamp-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"stream",
+		"encoder",
+		"charsToEscape",
+		"stringStream"
+	],
+	"name" : "StampMedium",
+	"type" : "normal"
+}
