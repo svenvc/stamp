@@ -9,7 +9,7 @@ testSimpleWorkQueue
 	[ | subscription |
 		subscription := processor1 newSubscriptionTo: 'work'.
 		subscription clientIndividualAck.
-		processor1 write: subscription subscribeFrame .
+		processor1 write: subscription subscribeFrame.
 		processor1 runWith: [ :message | | number |
 			quit ifTrue: [ ConnectionClosed signal ].
 			number := message body asInteger.
@@ -46,9 +46,12 @@ testSimpleWorkQueue
 		work := client newSendFrameTo: 'work'.
 		work text: number asString.
 		client writeWithReceipt: work ].
-	1 second asDelay wait.
+	"wait at most 5 seconds"
+	50 timesRepeat: [ 
+		processed1 size + processed2 size > 100 
+			ifFalse: [ 0.1 second asDelay wait ] ].
 	quit := true.
 	client close.
 	self assert: (processed1 allSatisfy: [ :each | each even ]).
 	self assert: (processed2 allSatisfy: [ :each | each odd ]).
-	self assert: (processed1 copy addAll: processed2; yourself) equals: all
+	self assert: processed1 , processed2 equals: all

@@ -14,10 +14,10 @@ testSimpleSendReceiveWithAck
 		clientIndividualAck.
 	client write: frame.
 	frame := client readMessage.
-	self assert: frame command = #MESSAGE.
-	self assert: frame body = message.
-	self assert: frame destination = destination.
-	self assert: frame subscription = subscriptionId.
+	self assert: frame command equals: #MESSAGE.
+	self assert: frame body equals: message.
+	self assert: frame destination equals: destination.
+	self assert: frame subscription equals: subscriptionId.
 	ack := frame ackFrame.
 	client write: ack. 
 	(frame := StampUnsubscribeFrame new)
