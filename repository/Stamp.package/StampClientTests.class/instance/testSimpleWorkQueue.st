@@ -48,7 +48,7 @@ testSimpleWorkQueue
 		client writeWithReceipt: work ].
 	"wait at most 5 seconds"
 	50 timesRepeat: [ 
-		processed1 size + processed2 size > 100 
+		processed1 size + processed2 size >= 100 
 			ifFalse: [ 0.1 second asDelay wait ] ].
 	quit := true.
 	client close.
