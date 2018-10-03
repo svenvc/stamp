@@ -1,3 +1,0 @@
-accessing
-clientIndividualAck
-	self subscribeFrame clientIndividualAck

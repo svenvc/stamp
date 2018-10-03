@@ -1,1 +1,0 @@
-I am StampFrameReadEvent, a StampLogEvent emitted when a StampFrame is read.

@@ -1,3 +1,0 @@
-accessing
-helloWorldQueue
-	^ '/queue/helloworld'

@@ -1,7 +1,0 @@
-{
-	"commentStamp" : "<historical>",
-	"classinstvars" : [ ],
-	"category" : "Stamp-Core",
-	"instvars" : [ ],
-	"name" : "TStampFrameWithBody"
-}

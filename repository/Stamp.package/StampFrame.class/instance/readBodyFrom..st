@@ -1,3 +1,0 @@
-reading
-readBodyFrom: stampMedium
-	stampMedium readEndFrame

@@ -1,1 +1,0 @@
-I am StampTransaction, a helper object to manage STOMP 1.2 transactions.
