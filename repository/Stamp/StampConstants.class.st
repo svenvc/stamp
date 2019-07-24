@@ -10,25 +10,30 @@ Class {
 
 { #category : #accessing }
 StampConstants class >> defaultPort [
+	<doc>
 	^ 61613
 ]
 
 { #category : #accessing }
 StampConstants class >> maxBodySize [
-	^ 2**20
+	<doc>
+	^ 2 ** 20
 ]
 
 { #category : #accessing }
 StampConstants class >> maxHeaderLength [
+	<doc>
 	^ 1024
 ]
 
 { #category : #accessing }
 StampConstants class >> maxHeaderLineLength [
+	<doc>
 	^ 1024
 ]
 
 { #category : #accessing }
 StampConstants class >> maxNumberOfHeaders [
+	<doc>
 	^ 32
 ]

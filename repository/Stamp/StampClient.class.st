@@ -283,13 +283,10 @@ StampClient >> readNextFrame [
 
 { #category : #reading }
 StampClient >> readSuchThat: block [
-	<doc:
-		'
-		This method checks first in the inbox for any frame that responds to the given block. 
-		If none frame is found in the inbox, it follows up by reading from the manager next frames up to find a frame that responds positively to the given block. 
-		All the frames that are not accepted by the block are sequentially added to the inbox, for further usage. 
-		This call may fail by Timeout.
-		'>
+	<doc:'This method checks first in the inbox for any frame that responds to the given block. 
+If none frame is found in the inbox, it follows up by reading from the manager next frames up to find a frame that responds positively to the given block. 
+All the frames that are not accepted by the block are sequentially added to the inbox, for further usage. 
+This call may fail by Timeout.'>
 	| frame started |
 	self writeHeartbeatIfNeeded.
 	(self readFromInboxSuchThat: block) ifNotNil: [ :found | ^ found ].
