@@ -76,10 +76,10 @@ It disconnect the client by informing the remote manager. It also closes the com
 
 #### StampClient>>readSuchThat: block
 
-		This method checks first in the inbox for any frame that responds to the given block. 
-		If none frame is found in the inbox, it follows up by reading from the manager next frames up to find a frame that responds positively to the given block. 
-		All the frames that are not accepted by the block are sequentially added to the inbox, for further usage. 
-		This call may fail by Timeout.
+This method checks first in the inbox for any frame that responds to the given block. 
+If none frame is found in the inbox, it follows up by reading from the manager next frames up to find a frame that responds positively to the given block. 
+All the frames that are not accepted by the block are sequentially added to the inbox, for further usage. 
+This call may fail by Timeout.
 		
 
 #### StampClient>>open
