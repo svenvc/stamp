@@ -52,6 +52,16 @@ StampSubscription >> id: string [
 	self subscribeFrame id: string
 ]
 
+{ #category : #accessing }
+StampSubscription >> prefetchCount [
+	^ self subscribeFrame prefetchCount
+]
+
+{ #category : #accessing }
+StampSubscription >> prefetchCount: aNumber [
+	self subscribeFrame prefetchCount: aNumber
+]
+
 { #category : #printing }
 StampSubscription >> printOn: stream [
 	super printOn: stream.

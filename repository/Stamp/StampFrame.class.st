@@ -58,7 +58,7 @@ Class {
 	#instVars : [
 		'headers'
 	],
-	#category : 'Stamp-Core'
+	#category : #'Stamp-Core'
 }
 
 { #category : #accessing }
@@ -93,8 +93,7 @@ StampFrame class >> readFrom: stampMedium [
 
 { #category : #accessing }
 StampFrame >> command [
-	"The STOMP command that I implement"
-	
+	<doc: 'The STOMP command that I implement'>
 	^ self class command
 ]
 

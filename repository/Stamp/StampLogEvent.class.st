@@ -34,6 +34,7 @@ StampLogEvent class >> initialize [
 
 { #category : #convenience }
 StampLogEvent class >> logToTranscript [
+	<doc: ' Start logging messages into transcript'>
 	self stopLoggingToTranscript.
 	^ self announcer when: self send: #crShow: to: Transcript
 ]
@@ -60,6 +61,7 @@ StampLogEvent class >> startUp [
 
 { #category : #convenience }
 StampLogEvent class >> stopLoggingToTranscript [
+	<doc: ' Stops logging messages into transcript'>
 	self announcer unsubscribe: Transcript
 ]
 
