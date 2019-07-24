@@ -559,6 +559,7 @@ This code implements STOMP 1.2
 http://stomp.github.io/stomp-specification-1.2.html
 http://stomp.github.com/
 http://en.wikipedia.org/wiki/Streaming_Text_Oriented_Messaging_Protocol
+```
 --- BNF ---
 NULL = <US-ASCII null (octet 0)>
 LF = <US-ASCII line feed (aka newline) (octet 10)>
@@ -591,7 +592,7 @@ server-command = "CONNECTED"
 header = header-name ":" header-value
 header-name = 1*<any OCTET except CR or LF or ":">
 header-value = *<any OCTET except CR or LF or ":">
-
+```
 ### Properties
 headers
 
