@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Start rabbitmq with STOMP plugin enabled 
-        run: docker-compose -f rabbitmq-with-stomp-plugin-enabled.yml up -d
+        run: docker-compose -f .github/workflows/docker-compose.yml up -d
       - uses: hpi-swa/setup-smalltalkCI@v1
         with:
           smalltalk-version: ${{ matrix.smalltalk }}
