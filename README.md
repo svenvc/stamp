@@ -22,7 +22,7 @@ Execute the following Metacello baseline load script
 
 ```Smalltalk
 Metacello new
-	baseline: 'stamp';
+	baseline: 'Stamp';
 	repository: 'github://svenvc/stamp/repository';
 	load
 ```
@@ -34,7 +34,7 @@ Add the following code to your Metacello baseline
 
 ```Smalltalk
 spec 
-   baseline: 'stamp' 
+   baseline: 'Stamp' 
    with: [ spec repository: 'github://svenvc/stamp/repository' ]
 ```
 
